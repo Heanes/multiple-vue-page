@@ -6,7 +6,7 @@ let optimization = {
     splitChunks:  {
         cacheGroups: {
             // 第三方npm管理的包
-            vendor: {
+            vendors: {
                 test:   /[\\/]node_modules[\\/]/,
                 name:   'vendors',
                 chunks: 'all'

@@ -8,6 +8,7 @@ const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 let pageEntries = require('./pageEntries.config');
+let pluginBanner = require('./pluginBanner.config');
 
 let htmlWebpackPluginArr = [];
 
@@ -37,35 +38,23 @@ pageEntries.forEach(item => {
     // console.log('\n');
 });
 
-let utils = require('../utils/utils');
-
 let plugins = [
     // 清理构建目录
     new CleanWebpackPlugin([dirVars.distDirName], {
         root: dirVars.rootDir,       //根目录
     }),
 
+    // 添加banner
+    pluginBanner,
+    new VueLoaderPlugin(),
+
     // 输出html
     ...htmlWebpackPluginArr,
-
-    new VueLoaderPlugin(),
 
     // 将对象暴露给webpack
     new webpack.ProvidePlugin({
         $: 'jQuery',
         join: ['lodash', 'join']
-    }),
-
-    // 生成文件添加自定义banner
-    new webpack.BannerPlugin({
-        banner:  (options) => {
-            options.author = 'Heanes';
-            options.time = utils.getFormatDate();
-            return `@author: ${options.author}\n@time: ${options.time}`;
-        },
-        exclude: [
-            /^vendors\..*\.js$/     // 排除vendors
-        ]
     })
 ];
 
