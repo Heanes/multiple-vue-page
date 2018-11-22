@@ -1,7 +1,7 @@
 {
-  "name": "webpack-study",
+  "name": "multiple-vue-page",
   "version": "1.0.0",
-  "description": "learn frontend, use webpack",
+  "description": "multiple-vue-page, use webpack",
   "private": true,
   "scripts": {
     "watch": "webpack --colors --watch --config build/webpack.dev.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Heanes/webpack-study.git"
+    "url": "git+https://github.com/Heanes/multiple-vue-page.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Heanes/webpack-study/issues"
+    "url": "https://github.com/Heanes/multiple-vue-page/issues"
   },
-  "homepage": "https://github.com/Heanes/webpack-study#readme",
+  "homepage": "https://github.com/Heanes/multiple-vue-page#readme",
   "devDependencies": {
     "@babel/core": "^7.1.5",
     "@babel/preset-env": "^7.1.5",
