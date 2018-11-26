@@ -13,7 +13,7 @@ let pluginBanner = require('./pluginBanner.config');
 let htmlWebpackPluginArr = [];
 
 pageEntries.forEach(item => {
-    //console.log('item', item);
+    // console.log('item', item);
 
     let htmlFileName = `${item}.html`;
 
@@ -53,8 +53,7 @@ let plugins = [
 
     // 将对象暴露给webpack
     new webpack.ProvidePlugin({
-        $: 'jQuery',
-        join: ['lodash', 'join']
+        jQuery: 'jquery'
     })
 ];
 

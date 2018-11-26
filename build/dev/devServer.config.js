@@ -1,5 +1,7 @@
 const dirVars = require('../base/dirVars.config.js');
 
+const proxyConfig = require('./proxy.dev.config.js');
+
 let devServer = {
     contentBase: dirVars.distDir,
     //publicPath:'http://localhost:8080/',
@@ -10,5 +12,7 @@ let devServer = {
     hotOnly: true,
     compress: true,
     // inline: true, // 可以监控js变化
+    // 代理
+    proxy: proxyConfig
 };
 module.exports = devServer;

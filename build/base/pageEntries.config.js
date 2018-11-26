@@ -18,7 +18,7 @@ let found = gb.found;
 
 // 剔除含'_'或者含'/_'这种的文件
 let foundFiltered = found.filter(item => {
-    return !item.match(/^_.*|\/_.*/);
+    return !item.match(/^_.*|\/_.*|static/);
 }).map(item => {
     return item.replace(/\/[^\/]*\..+/, '');
 });

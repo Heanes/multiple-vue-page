@@ -5,18 +5,6 @@ let modules = require('../base/module.config');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 modules.rules.push(
-    // css 处理
-    {
-        test: /\.css$/,
-        use: [
-            {
-                loader: MiniCssExtractPlugin.loader
-            },
-            'css-loader'
-        ],
-        include: dirVars.srcRootDir,
-        exclude: /node_modules|vendor/
-    },
     // sass-scss 处理
     {
         test: /\.(sa|sc|c)ss$/,
@@ -25,8 +13,8 @@ modules.rules.push(
             'css-loader',
             'sass-loader'
         ],
-        include: dirVars.srcRootDir,
-        exclude: /node_modules|vendor/
+        /*include: dirVars.srcRootDir,
+        exclude: /node_modules|vendor/*/
     },
     // js 处理
     {
@@ -37,8 +25,8 @@ modules.rules.push(
                 presets: ['@babel/preset-env'], // 转换为兼容的es2015 js语法
             }
         },
-        include: dirVars.srcRootDir,
-        exclude: /node_modules|vendor/,
+        /*include: dirVars.srcRootDir,
+        exclude: /node_modules|vendor/,*/
     }
 );
 

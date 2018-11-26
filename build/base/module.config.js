@@ -16,21 +16,36 @@ module.exports = {
         },
         // 图片等资源文件
         {
-            // 图片加载器，雷同file-loader，更适合图片，可以将较小的图片转成base64，减少http请求
-            // 如下配置，将小于8192byte的图片转成base64码
-            test: /\.(png|jpg|jpeg|gif)$/,
-            // loader: 'url-loader?limit=8192&name=./static/img/[hash].[ext]',
+            test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
             use: [
                 {
                     loader: 'url-loader',
                     options: {
-                        limit: 8192,
-                        name: './static/img/[hash].[ext]',
+                        limit: 4,
+                        name: 'static/img/[name][hash:8].[ext]',
                     },
                 }
             ],
-            include: dirVars.srcRootDir,
-            exclude: /node_modules|vendor/
+            /*include: dirVars.srcRootDir,
+            exclude: /node_modules|vendor/*/
         },
+        {
+            test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+                limit: 4,
+                //useRelativePath: true,
+                name: 'static/media/[name].[hash:8].[ext]'
+            }
+        },
+        {
+            test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+                limit: 4,
+                //useRelativePath: true,
+                name: 'static/fonts/[name].[hash:8].[ext]'
+            }
+        }
     ],
 };

@@ -4,6 +4,9 @@
             <div class="page-title">
                 <h1>index page title</h1>
             </div>
+            <div class="page-content">
+                <div class="copyright"></div>
+            </div>
         </div>
     </layout-basic>
 </template>
