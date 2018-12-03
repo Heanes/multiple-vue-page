@@ -5,7 +5,7 @@
     "private": true,
     "scripts": {
         "watch": "webpack --colors --watch --config build/webpack.dev.js",
-        "start": "webpack-dev-server --inline --progress  --config build/webpack.dev.js",
+        "start": "webpack-dev-server --inline --progress --config build/webpack.dev.js",
         "build": "webpack --progress --colors --bail --config build/webpack.prod.js"
     },
     "repository": {
