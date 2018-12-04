@@ -15,6 +15,8 @@ const webpackConfig = {
 
     optimization: require('./dev/optimization.dev.config.js'),
 
+    stats: require('./dev/stats.dev.config.js'),
+
     mode: 'development',
 
     devtool: 'eval-source-map'
