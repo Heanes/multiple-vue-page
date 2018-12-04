@@ -2,10 +2,11 @@ const utils = require('./utils/utils');
 /**
  * @doc 编译信息基础配置文件
  */
+const packageConfig = require('../package.json');
 module.exports = {
-    appName: 'multiple-vue-page',
-    appVersion: 'v1.0.0',
-    appAuthor: 'Heanes',
+    appName: packageConfig.name,
+    appVersion: packageConfig.version,
+    appAuthor: packageConfig.author,
     copyrightYear: utils.getFormatDate('yyyy'),
     generateTime: utils.getFormatDate(),
 
