@@ -23,7 +23,7 @@ pageEntries.forEach(item => {
         filename: htmlFileName,
         template: templateName,
         chunks: ['manifest', 'vendors', 'common'],
-        hash: true, // 为静态资源生成hash值
+        // hash: true, // 为静态资源生成hash值，不要生成，因为这会导致gzip不起作用，因为hash会导致gzip_type判断mime失效
         xhtml: true,
     };
 
