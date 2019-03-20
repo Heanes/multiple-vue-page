@@ -21,9 +21,17 @@ module.exports = {
     ],
     // add your custom rules here
     rules: {
-        // allow async-await
-        'generator-star-spacing': 'off',
-        // allow debugger during development
-        'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+      //'indent': ['error', 4],
+      // allow async-await
+      'generator-star-spacing': 'off',
+      // allow debugger during development
+      'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+      'semi': 0,
+      'space-before-function-paren': 0,
+      'keyword-spacing': 0,
+      'space-before-blocks': 0,
+      'object-curly-spacing': 0,
+      'no-multi-spaces': 0,
+      'no-trailing-spaces': 0
     }
 };
